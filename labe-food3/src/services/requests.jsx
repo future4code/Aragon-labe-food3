@@ -10,7 +10,7 @@ export const requestLogin = (form, clear, navigate) => {
     }
 
     axios
-    .post(`${BASE_URL}/users/login`, body)
+    .post(`${BASE_URL}/login`, body)
     .then((res) =>{
 
         localStorage.setItem("token", res.data.token)
@@ -23,8 +23,31 @@ export const requestLogin = (form, clear, navigate) => {
         alert("Email e/ou senha inválidos! tente novamente.")
 
         clear()
+    })    
+}
+
+export const requestSignUp = (form, clear, navigate) =>{
+    const body ={
+        
+            name: form.name,
+            email: form.email,
+            cpf: form.cpf,
+            password: form.password
+        }
+
+    axios
+    .post(`${BASE_URL}/signup`, body) 
+    .then((res) =>{
+        localStorage.setItem("token", res.data.token)
+        localStorage.setItem("userEmail", form.email)
+        alert("Usuário criado com sucesso!")
+        goToFeed(navigate)
+    })   
+    .catch((err)=>{
+        alert("Algo deu errado!")
+
+        clear()
     })
 
-    
 }
 

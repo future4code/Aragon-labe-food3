@@ -51,3 +51,45 @@ export const requestSignUp = (form, clear, navigate) =>{
 
 }
 
+export const requestAddAddress=(form,clear,navigate)=>{
+    const header={
+        headers:{
+            auth:localStorage.getItem("token")
+        }
+    }
+    const body={
+ 
+        
+   street:form.street,
+  number:form.number, 
+  neighbourhood:form.neighbourhood, 
+  city:form.city, 
+  state:form.state,
+  complement:form.complement
+}
+console.log(localStorage.getItem("token"))
+axios
+.put(`${BASE_URL}/address`,body,header)
+.then((res)=>{
+    localStorage.setItem("token",res.data.token)
+    alert("Enderreço cadastrado com sucesso ")
+    goToFeed(navigate)
+})
+.catch((error)=>{
+    alert("aogo deu errado")
+    clear()
+})
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

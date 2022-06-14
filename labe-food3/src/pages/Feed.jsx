@@ -15,7 +15,7 @@ const Feed = () => {
             <h2>Buscar por restaurante</h2>
         </section>
         <section>
-            <h2>Lista de restaurantes</h2>
+            <h3>Lista de restaurantes</h3>
         </section>
     </main>
   )

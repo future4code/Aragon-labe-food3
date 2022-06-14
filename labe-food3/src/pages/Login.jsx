@@ -34,8 +34,8 @@ const Login = () => {
                 name={"email"}
                 value={form.email}
                 onChange={onChange}
-                />
-                <label htmlFor={"password"}>Senha:</label>
+                /><br />
+                 <label htmlFor={"password"}>Senha:</label>
                 <input
                 type={"password"}
                 id={"password"}

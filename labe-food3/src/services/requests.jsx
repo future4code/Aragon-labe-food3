@@ -72,11 +72,11 @@ axios
 .put(`${BASE_URL}/address`,body,header)
 .then((res)=>{
     localStorage.setItem("token",res.data.token)
-    alert("Enderreço cadastrado com sucesso ")
+    alert("Endereço cadastrado com sucesso ")
     goToFeed(navigate)
 })
 .catch((error)=>{
-    alert("aogo deu errado")
+    alert("Algo deu errado")
     clear()
 })
 }

@@ -15,16 +15,17 @@ const Header = (props) => {
         }
     }
 
+
   return (
    <header>
        <img src={logo} alt="imagem_logo" />
        
-       {props.isProtected && (
+      
            <>
             <h3>Bem vindo, {localStorage.getItem("userEmail")}!</h3>
             <button onClick={logout}>Logout</button>
            </>
-       )}
+       
    </header>
   )
 }

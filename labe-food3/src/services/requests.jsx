@@ -27,6 +27,9 @@ export const requestLogin = (form, clear, navigate) => {
 }
 
 export const requestSignUp = (form, clear, navigate) =>{
+    
+
+
     const body ={
         
             name: form.name,
@@ -50,4 +53,5 @@ export const requestSignUp = (form, clear, navigate) =>{
     })
 
 }
+
 

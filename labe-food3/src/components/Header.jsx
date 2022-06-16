@@ -24,6 +24,7 @@ const Header = (props) => {
            <>
             <h3>Bem vindo, {localStorage.getItem("userEmail")}!</h3>
             <button onClick={logout}>Logout</button>
+        
            </>
        
    </header>

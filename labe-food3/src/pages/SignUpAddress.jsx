@@ -3,7 +3,6 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import useForm from '../hooks/useForm'
 import useProtectedPage from '../hooks/useProtectedPage'
-import useUnprotectedPage from '../hooks/useUnprotectedPage'
 import { goToLogin } from '../routes/coordinator'
 import { requestAddAddress } from '../services/requests'
 
@@ -75,7 +74,7 @@ onChange={onChange}
 />
 <br/>
 <button type={"submit"}> cadastrar</button><br/>
-<button onClick={()=>goToLogin(navigate)}> voutar</button><br/>
+<button onClick={()=>goToLogin(navigate)}> voltar</button><br/>
 
 </form>
     </section>

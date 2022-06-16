@@ -3,7 +3,7 @@ import { requestSignUp } from "../services/requests"
 import Header from "../components/Header"
 import { useNavigate } from "react-router-dom"
 import useForm from "../hooks/useForm"
-import { goToLogin } from "../routes/coordinator"
+import {  goToSignAddress } from "../routes/coordinator"
 
 
 
@@ -73,7 +73,7 @@ const SignUp = () => {
           <br />
           <button type={"submit"}>Cadastrar usuário</button>        
         </form>
-        <button onClick={() => goToLogin(navigate)}>Voltar</button>
+        <button onClick={() => goToSignAddress(navigate)}>Voltar</button>
       </section>
 
     </main>

@@ -1,26 +1,20 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect } from 'react'
 import Header from '../components/Header'
 import GlobalStateContext from '../globalState/GlobalStateContext'
 import RestaurantCards from "../components/RestaurantCards"
-import { useNavigate } from 'react-router-dom'
-import { goToLogin } from "../routes/coordinator"
-import useUnprotectedPage from '../hooks/useUnprotectedPage'
 import useProtectedPage from '../hooks/useProtectedPage'
 
 function Feed() {
-    const navigate = useNavigate()
+   
    useProtectedPage()
 
     const { states, getters } = useContext(GlobalStateContext)
     const { restaurantes } = states
-    const { getRestaurantes } = getters
+   
+    const { getRestaurantes } = getters // lista restaurante
+   
+   
 
-    const [restaurantSelect, setRestaurantSelect] = useState("")
-
-
-    // const onChangeRestaurant = (event) => {
-    //     setRestaurantSelect(event.target.value);
-    // };
 
     useEffect(() => {
        getRestaurantes()
@@ -47,23 +41,15 @@ function Feed() {
     })
     return (
         <main>
+            
             <Header
                 isProtected={false} />
             <hr />
             <section>
 
-                <form>
-                    <label>
-                    <input placeholder='restaurante'
-                    name="name"
-                    // onChange={onChangeRestaurant}
-                    // required
-                                        />
-                {/* <option value={""} >Ordem Numérica</option>
-                <option value={"asc"} >A-Z</option>
-                <option value={"desc"} >Z-A</option>
-               */}
-                    </label>
+                <form>                 
+                                <br/>           
+                   <input list={"category"} action={"handleLocateCategory"}/>
                 </form>
             </section>
             <section>

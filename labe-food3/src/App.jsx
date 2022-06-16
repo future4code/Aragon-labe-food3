@@ -1,27 +1,12 @@
-import GlobalState from "./globalState/GlobalState";
-import Router from "./routes/Router";
-// import {createGlobalStyle} from "styled-components"
-
-// const GlobalStyle = createGlobalStyle`
-//   body{
-    
-  
-//   }
-//   img{
-//     width: 5px;
-//   height: 2px;
-//   }
- 
-
-  
+import GlobalState from "./globalState/GlobalState"
+import Router from "./routes/Router"
 
 function App() {
   return (
-   
-   <GlobalState>
-    <Router />
+    <GlobalState>
+      <Router />
     </GlobalState>
   );
 }
 
-export default App;
+export default App

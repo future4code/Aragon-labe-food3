@@ -5,14 +5,10 @@ import { useNavigate } from "react-router-dom"
 import useForm from "../hooks/useForm"
 import {  goToSignAddress } from "../routes/coordinator"
 
-
-
-
 const SignUp = () => {
   useUnprotectedPage()
 
   const navigate = useNavigate()
-
   const {form, onChange, clear} = useForm({name:"", email:"", cpf:"", password:""})
 
   const signup = (e) =>{
@@ -21,17 +17,14 @@ const SignUp = () => {
     requestSignUp(form, clear, navigate)
   }
 
-
   return (
     <main>
-      <Header 
-        isProtected={false}
-      />
+      <Header isProtected={false} />
       <hr />
       <section>
-        <h2>Cadastro de Novo Usúario</h2>
+        <h2>Cadastro de novo usuário</h2>
         <form onSubmit={signup}>
-          <label htmlFor={"name"}>Nome:</label>
+          <label htmlFor={"name"}>Nome: </label>
           <input
           id={"name"}
           name={"name"}
@@ -40,7 +33,7 @@ const SignUp = () => {
           required
           />
           <br />
-          <label htmlFor={"email"}>E-mail:</label>
+          <label htmlFor={"email"}>E-mail: </label>
           <input 
           id={"email"}
           type={"email"}
@@ -50,7 +43,7 @@ const SignUp = () => {
           required
           />
           <br />
-          <label htmlFor={"cpf"}>CPF</label>
+          <label htmlFor={"cpf"}>CPF: </label>
           <input 
           id={"cpf"}
           name={"cpf"}
@@ -59,7 +52,7 @@ const SignUp = () => {
           required
           />
           <br />
-          <label htmlFor={"password"}>Senha:</label>
+          <label htmlFor={"password"}>Senha: </label>
           <input 
           id={"password"}
           type={"password"} 
@@ -67,7 +60,7 @@ const SignUp = () => {
           value={form.password}
           onChange={onChange}
           pattern={"^.{6,30}$"}
-          title={"A senha deve ter no mínimo 8 caracteres"}
+          title={"A senha deve ter no mínimo 6 caracteres"}
           required          
           />
           <br />
@@ -75,7 +68,6 @@ const SignUp = () => {
         </form>
         <button onClick={() => goToSignAddress(navigate)}>Voltar</button>
       </section>
-
     </main>
   )
 }

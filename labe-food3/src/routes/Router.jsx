@@ -7,9 +7,6 @@ import RestaurantDetails from "../pages/RestaurantDetails"
 import ShoppingCart from "../pages/ShoppingCart"
 import Profile from "../pages/Profile"
 
-
-
-
 const Router = () => {
   return (
     <BrowserRouter>
@@ -20,11 +17,9 @@ const Router = () => {
             <Route path={"/signup/address"} element={<SignUpAddress />}/>
             <Route path={"/restaurants/:restaurantId"} element={<RestaurantDetails/>}/>
             <Route path={"/restaurants/:restaurantId/order"} element={<ShoppingCart/>}/>
-            <Route path={"/active-order"} element={<Profile/>}/>
-            
+            <Route path={"/active-order"} element={<Profile/>}/>            
         </Routes>
-    </BrowserRouter>
-    
+    </BrowserRouter>    
   )
 }
 

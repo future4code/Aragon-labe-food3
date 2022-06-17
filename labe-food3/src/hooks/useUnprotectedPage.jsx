@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
-import { goToFeed } from "../routes/coordinator"
+import {  goToLogin } from "../routes/coordinator"
 
 
 
@@ -11,7 +11,7 @@ const useUnprotectedPage = () => {
         const token= localStorage.getItem("token")
 
         if(token){
-            goToFeed(navigate)
+            goToLogin(navigate)
         }
     },[])
 

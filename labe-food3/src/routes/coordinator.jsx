@@ -1,6 +1,6 @@
 
 export const goToFeed = (navigate) =>{
-    navigate("/")
+    navigate("/restaurants")
 }
 
 export const goToLogin = (navigate) =>{

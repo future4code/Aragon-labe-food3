@@ -5,6 +5,7 @@ import Feed from "../pages/Feed"
 import SignUpAddress from "../pages/SignUpAddress"
 import RestaurantDetails from "../pages/RestaurantDetails"
 import Profile from "../pages/Profile"
+import InitialPage from "../pages/InitialPage"
 
 
 
@@ -13,7 +14,8 @@ const Router = () => {
   return (
     <BrowserRouter>
         <Routes>
-            <Route index element={<Feed/>}/>
+          <Route index element={<InitialPage/>}/>
+            <Route path={"/restaurants"} element={<Feed/>}/>
             <Route path={"/login"} element={<Login/>} />
             <Route path={"/signup"} element={<SignUp/>}/>
             <Route path={"/signup/address"} element={<SignUpAddress />}/>

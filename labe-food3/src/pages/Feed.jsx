@@ -10,7 +10,6 @@ function Feed() {
 
     const { states, getters } = useContext(GlobalStateContext)
     const { restaurantes } = states
-   
     const { getRestaurantes } = getters // lista restaurante
    
    

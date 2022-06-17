@@ -1,77 +1,56 @@
 import { useParams } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
 import Header from "../components/Header"
-import axios from "axios"
-import { BASE_URL } from "../constants/urls"
-import { goToLogin, goBack } from "../routes/coordinator"
-import { useEffect, useState } from "react"
-import RestaurantCards from "../components/RestaurantCards"
+import { goToFeed } from "../routes/coordinator"
+import { useContext, useEffect, } from "react"
+import useProtectedPage from "../hooks/useProtectedPage"
+import GlobalStateContext from "../globalState/GlobalStateContext"
+import RestaurantDetailsCard from "../components/Selecoes/RestaurantDetailsCard"
 
 export default function RestaurantDetails() { // declarando variaveis de estado 
-    const [selectrestaurants, setSelectRestaurante] = useState({})
 
     const navigate = useNavigate()
     const params = useParams()
-
-
-
-    const getRestaurants = () => {
-        axios
-            .get(`${BASE_URL}/restaurants/${params.restaurantId}`, {
-                headers: {
-                    auth: window.localStorage.getItem("token")
-                }
-            }).then((res) => {
-                setSelectRestaurante(res.data.restaurant.products)
-                console.log(res.data)
-            }).catch((err) => {
-            
-                console.log(err)
-            })
-    }
+    useProtectedPage()
+    const { states, getters } = useContext(GlobalStateContext)
+    const { selectRestaurants } = states
+    const { getRestaurantDetails } = getters
 
     useEffect(() => {
-        const token = window.localStorage.getItem("token")
-        if (!token) {
-            goToLogin(navigate)
-        }
+        getRestaurantDetails(params.restaurantId)
     }, [])
 
-    useEffect(() => {
-        getRestaurants()
-    }, [])
-const showSelectRestaurant = selectrestaurants.restaurants?.map((selectrestaurant) => {
-    return(
-        <RestaurantCards
-        key={selectrestaurant.id}
-        description={selectrestaurants.description}
-        logoUrl={selectrestaurants.logoUrl}
-        name={selectrestaurants.name}
-        address={selectrestaurants.address}
-        category={selectrestaurants.category}
-        shipping={selectrestaurants.shipping}
-        deliveryTime={selectrestaurants.deliveryTime}
 
-    />
-    )
-})
+    const showRestaurantes = selectRestaurants.products?.map((element) => {
 
-    
+        return (
+
+
+            <RestaurantDetailsCard
+                key={element.id}
+                description={element.description}
+                price={element.price}
+                photoUrl={element.photoUrl}
+                name={element.name}
+                category={element.category}
+            />
+        )
+    })
+
     return (
         <main>
             <Header
-
+                isProtected={false}
             />
             <hr />
-           
-                <button onClick={() => goBack(navigate)}>Voltar</button>
-                <section>
-                    <article>
-                       {showSelectRestaurant}
-                    </article>
-                </section>
-          
-</main>
+            <button onClick={() => goToFeed(navigate)}>Voltar</button>
+            <section>
+               
+                    {showRestaurantes}
+              
+            </section>
 
-      )
+        </main>
+
+    )
 }

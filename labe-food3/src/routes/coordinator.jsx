@@ -1,5 +1,5 @@
 export const goToFeed = (navigate) =>{
-    navigate("/")
+    navigate("/restaurants")
 }
 
 export const goToLogin = (navigate) =>{
@@ -18,10 +18,10 @@ export const goToRestaurantDetail = (navigate, restaurantId) => {
     navigate(`/restaurants/${restaurantId}`)
 }
 
-export const goToShoppingCart = (navigate, restaurantId) => {
-    navigate(`/restaurants/${restaurantId}/order`)
+export const goBack = (navigate) => {
+    navigate(-1)
 }
-
+ 
 export const goToProfile = (navigate) => {
     navigate(`/active-order`)
 }

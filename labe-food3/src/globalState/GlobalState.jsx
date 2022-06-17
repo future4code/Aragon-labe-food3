@@ -7,22 +7,11 @@ const GlobalState = (props) => {
     const [restaurantes, setRestaurantes] = useState([])
     const [restaurantSelect, setRestaurantSelect] = useState({})
     const [locateRestaurant, setLocate] = useState("") //buscar restaurante
-    const [category, setCategory] = useState([])   // opçoes de categoria
-    const [selectRestaurant, setSelectRestaurant] = useState([]) // seleção de restaurante
+    const [category, setCategory] = useState([])   // opçoes de  categoria
+    const [selectRestaurants, setSelectRestaurant] = useState([]) // seleção de restaurante
     const [cartItems, setCartItems] = useState([]);
-
-    const getRestaurantDetails = (restaurantId) => {
-        axios
-            .get(`${BASE_URL}/restaurants/${restaurantId}`)
-            .then((res) => {
-                setRestaurantSelect(res.data)
-                console.log(res.data)
-            })
-            .catch((err) => {
-                console.log(err.message)
-            })
-    }
-
+    
+    
     const onAdd = (product) => {
         const exist = cartItems.find(x => x.id === product.id);
         if (exist) {
@@ -55,7 +44,23 @@ const GlobalState = (props) => {
             })
     }
 
-    const states = { restaurantes, restaurantSelect, locateRestaurant, category, selectRestaurant }
+
+    const getRestaurantDetails = (restaurantId) => {
+        axios
+            .get(`${BASE_URL}/restaurants/${restaurantId}`, {
+                headers: {
+                    auth: window.localStorage.getItem("token")
+                }
+            }).then((res) => {
+                setSelectRestaurant(res.data.restaurant)
+                console.log(res.data.restaurant)
+                }).catch((err) => {
+            
+                console.log(err)
+            })
+    }
+
+    const states = { restaurantes, restaurantSelect,locateRestaurant,category,selectRestaurants }
     const setters = { setRestaurantes, setRestaurantSelect, setLocate, setCategory, setSelectRestaurant }
     const getters = { getRestaurantes, getRestaurantDetails, onAdd }
 

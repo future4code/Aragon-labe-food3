@@ -1,5 +1,5 @@
 import axios from "axios"
-import { goToSignUp, goToSignAddress, goToFeed } from "../routes/coordinator"
+import { goToSignUpPage, goToAddressPage, goToHomePage } from "../routes/coordinator"
 import { BASE_URL } from "../constants/urls"
 
 export const requestLogin = (form, clear, navigate) => {
@@ -14,7 +14,7 @@ export const requestLogin = (form, clear, navigate) => {
         localStorage.setItem("token", res.data.token)
         localStorage.setItem("userEmail", form.email)
         alert("Login realizado com sucesso!")
-        goToSignUp(navigate)
+        goToSignUpPage(navigate)
     })
     .catch((err) => {
         alert("Email e/ou senha inválidos! Tente novamente.")
@@ -36,7 +36,7 @@ export const requestSignUp = (form, clear, navigate) => {
         localStorage.setItem("token", res.data.token)
         localStorage.setItem("userEmail", form.email)
         alert("Usuário criado com sucesso!")
-        goToSignAddress(navigate)
+        goToAddressPage(navigate)
     })
     .catch((err) => {
         alert("Algo deu errado!")
@@ -66,7 +66,7 @@ export const requestAddAddress = (form, clear, navigate) => {
     .then((res) => {
         localStorage.setItem("token", res.data.token)
         alert("Endereço cadastrado com sucesso ")
-        goToFeed(navigate)
+        goToHomePage(navigate)
     })
     .catch((error) => {
         alert("Algo deu errado")

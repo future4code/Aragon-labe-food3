@@ -1,24 +1,31 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Login from "../pages/Login"
-import SignUp from "../pages/SignUp"
-import Feed from "../pages/Feed"
-import SignUpAddress from "../pages/SignUpAddress"
-import RestaurantDetails from "../pages/RestaurantDetails"
-import Profile from "../pages/Profile"
-import InitialPage from "../pages/InitialPage"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import HomePage from "../pages/HomePage"
+import SignUpPage from "../pages/SignUpPage"
+import ProfilePage from "../pages/ProfilePage"
+import AddressPage from "../pages/AddressPage"
+import RestaurantDetailsPage from "../pages/RestaurantDetailsPage"
+import CartPage from "../pages/CartPage"
+import ErrorPage from "../pages/ErrorPage"
+import SplashScreen from "../pages/splashScreen/SplashScreen"
+import LoginPage from "../pages/LoginPage"
+import EditProfilePage from "../pages/EditProfilePage.jsx"
+import EditAddressPage from "../pages/EditAddressPage"
 
-const Router = () => {
+function Router() {
   return (
     <BrowserRouter>
         <Routes>
-          <Route index element={<InitialPage/>}/>
-            <Route path={"/restaurants"} element={<Feed/>}/>
-            <Route path={"/login"} element={<Login/>} />
-            <Route path={"/signup"} element={<SignUp/>}/>
-            <Route path={"/signup/address"} element={<SignUpAddress />}/>
-            <Route path={"/restaurants/:restaurantId"} element={<RestaurantDetails/>}/>
-            <Route path={"/active-order"} element={<Profile/>}/>
-            
+          <Route index element={<SplashScreen/>} />
+            <Route path={"/home"} element={<HomePage />} />
+            <Route path={"/login"} element={<LoginPage />} />
+            <Route path={"/signup"} element={<SignUpPage />} />
+            <Route path={"/profile"} element={<ProfilePage />} />
+            <Route path={"address"} element={<AddressPage />}/>
+            <Route path={"/restaurant/:id"} element={<RestaurantDetailsPage />} />
+            <Route path={"/cart"} element={<CartPage />} />
+            <Route path={"/editaddress"} element={<EditAddressPage />} />
+            <Route path={"/editprofile"} element={<EditProfilePage />} />
+            <Route path={"*"} element={<ErrorPage />} />          
         </Routes>
     </BrowserRouter>    
   )

@@ -1,27 +1,48 @@
-export const goToFeed = (navigate) =>{
-    navigate("/restaurants")
+export const goToSplashScreen = (navigate) => {
+    navigate("/")
 }
 
-export const goToLogin = (navigate) =>{
+export const goToHomePage = (navigate) => {
+    navigate("/home")
+    window.scrollTo(0,0)
+}
+
+export const goToLoginPage = (navigate) => {
     navigate("/login")
 }
 
-export const goToSignUp = (navigate) =>{
+export const goToSignUpPage = (navigate) => {
     navigate("/signup")
 }
 
-export const goToSignAddress = (navigate) =>{
-    navigate("/signup/address")
+export const goToProfilePage = (navigate) => {
+    navigate("/profile")
 }
 
-export const goToRestaurantDetail = (navigate, restaurantId) => {
-    navigate(`/restaurants/${restaurantId}`)
+export const goToAddressPage = (navigate) => {
+    navigate("/address")
 }
 
-export const goBack = (navigate) => {
+export const goToDetailsPage = (navigate, id) => {
+    navigate(`/restaurant/${id}`)
+}
+
+export const goToCartPage = (navigate) => {
+    navigate("/cart")   
+}
+
+export const goToEditAddressPage = (navigate) => {
+    navigate("/editaddress")
+}
+
+export const goToEditProfilePage = (navigate) => {
+    navigate("/editprofile")
+}
+
+export const goToErrorPage = (navigate) => {
+    navigate("*")
+}
+
+export const goToBack = (navigate) => {
     navigate(-1)
-}
- 
-export const goToProfile = (navigate) => {
-    navigate(`/active-order`)
 }

@@ -1,28 +1,57 @@
+import { goToBack } from "../routes/coordinator"
 import { useNavigate } from "react-router-dom"
-import { goToLogin } from "../routes/coordinator"
-import logo from "../assets/logo.jpg"
+import logoVermelho from "../assets/logoVermelho.jpg"
 
-const Header = (props) => {
+
+function Header(props) {
     const navigate = useNavigate()
-
-    const logout = () => {
-        if (window.confirm("Tem certeza de que deseja sair?")) {
-            localStorage.removeItem("token")
-            localStorage.removeItem("userEmail")
-            goToLogin(navigate)
-            alert("Logout com sucesso!")
+    const showHeader = () => {
+        switch (props.currentPage) {
+            case "home":
+                return <img src={logoVermelho} alt="Logo IFuture" width="180px" heigth="90px" />
+            case "cart":
+                return (
+                    <>
+                        <h3>Meu carrinho</h3>
+                        <button onClick={() => goToBack(navigate)}>Voltar</button>
+                    </>
+                )
+            case "details":
+                return (
+                    <>
+                        <h3>Restaurante</h3>
+                        <button onClick={() => goToBack(navigate)}>Voltar</button>
+                    </>
+                )
+            case "address":
+                return <h3>Meu endereço</h3>
+            case "edit-address":
+                return (
+                    <>
+                        <h3>Editar endereço</h3>
+                        <button onClick={() => goToBack(navigate)}>Voltar</button>
+                    </>
+                )
+            case "profile":
+                return (
+                    <>
+                        <h3>Meu perfil</h3>
+                        <button onClick={() => goToBack(navigate)}>Voltar</button>
+                    </>
+                )
+            case "edit-profile":
+                return (
+                    <>
+                        <h3>Editar perfil</h3>
+                        <button onClick={() => goToBack(navigate)}>Voltar</button>
+                    </>
+                )
+            default:
+                return <img src={logoVermelho} alt="Logo IFuture" width="180px" heigth="90px" />
         }
     }
 
-    return (
-        <header>
-            <img src={logo} alt="imagem_logo" />
-            <>
-                <h3>Bem vindo, {localStorage.getItem("userEmail")}!</h3>
-                <button onClick={logout}>Logout</button>
-            </>
-        </header>
-    )
+    return <>{showHeader()}</>
 }
 
 export default Header

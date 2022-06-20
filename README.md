@@ -4,10 +4,12 @@ O que funciona!
 
 Apresentação da tela de abertura com a logo do app,<br>
 redirecionando em seguida o usuário para a página de login <br>
+cadastro dos dados pessoais e endereço <br>
 Navegação entre as páginas <br>
 Busca de restaurantes por nome <br>
 Exibição dos detalhes do restaurante e cardápio <br>
-Adição de produtos ao carrinho
+Adição de produtos ao carrinho <br>
+Perfil do Usuário, edição dos dados pessoais e endereço do usúario.
 
 
 O que não funciona!
@@ -16,8 +18,7 @@ Filtro de restaurantes por categoria <br>
 Acesso os pratos do restaurante,<br>
 divididos em categorias <br>
 Acesso do usuário ao histórico de pedidos <br>
-Funcionalidades do carrinho <br>
-(exibição do endereço de entrega, valor da compra, forma de pagamento e remoção de itens)
+(valor da compra, forma de pagamento e remoção de itens)
 
 Link Surge!
 

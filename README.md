@@ -1,6 +1,7 @@
 PROJETO LABEFOOD
 
 O que funciona!
+
 Apresentação da tela de abertura com a logo do app, redirecionando em seguida o usuário para a página de login
 Navegação entre as páginas
 Busca de restaurantes por nome
@@ -9,15 +10,18 @@ Adição de produtos ao carrinho
 Adição de produtos ao carrinho
 
 O que não funciona!
+
 Filtro de restaurantes por categoria
 Acesso os pratos do restaurante, divididos em categorias
 Acesso do usuário ao histórico de pedidos
 Funcionalidades do carrinho (exibição do endereço de entrega, valor da compra, forma de pagamento e remoção de itens)
 
 Link Surge!
+
 https://tricky-wheel.surge.sh/
 
 Integrantes:
+
 
 Cristiano,
 Susy,
@@ -25,6 +29,7 @@ Fernando,
 Adriana,
 
 Referências.
+
 
 Labbedit,
 LabbeNinjas,

@@ -3,18 +3,19 @@ PROJETO LABEFOOD
 O que funciona!
 
 Apresentação da tela de abertura com a logo do app,<br>
-redirecionando em seguida o usuário para a página de login
-Navegação entre as páginas
-Busca de restaurantes por nome
-Exibição dos detalhes do restaurante e cardápio
+redirecionando em seguida o usuário para a página de login <br>
+Navegação entre as páginas <br>
+Busca de restaurantes por nome <br>
+Exibição dos detalhes do restaurante e cardápio <br>
 Adição de produtos ao carrinho
-Adição de produtos ao carrinho
+
 
 O que não funciona!
 
-Filtro de restaurantes por categoria
-Acesso os pratos do restaurante, divididos em categorias
-Acesso do usuário ao histórico de pedidos
+Filtro de restaurantes por categoria <br>
+Acesso os pratos do restaurante,<br>
+divididos em categorias <br>
+Acesso do usuário ao histórico de pedidos <br>
 Funcionalidades do carrinho <br>
 (exibição do endereço de entrega, valor da compra, forma de pagamento e remoção de itens)
 

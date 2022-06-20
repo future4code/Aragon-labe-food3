@@ -3,6 +3,51 @@ import { useNavigate } from "react-router-dom"
 import Header from "../components/Header"
 import GlobalStateContext from "../globalState/GlobalStateContext"
 import { goToAddressPage } from "../routes/coordinator"
+import styled from "styled-components"
+
+const SignUpStyle = styled.main`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20vw;
+
+
+  form{
+        display: flex;
+        flex-direction: column;
+        width: 90vw;
+    }
+    input{
+        height: 5vh;
+        border-radius: 5px;
+        border: solid 0.1px grey;
+        font-size: 18px;
+    }
+    button{
+        background-color: red;
+        height: 5vh;
+        border: solid 0.1px grey;
+        border-radius: 2px;
+        color: black;
+        font-size: 20px;
+    }
+    section{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+   
+    h3{
+        font-size:22px;
+    }
+    p{
+      color: red;
+      text-align: center;
+      font-size: 20px;
+    }
+
+`
 
 function SignupPage() {
   const navigate = useNavigate()
@@ -12,6 +57,7 @@ function SignupPage() {
   const { postSignUp } = context.posts
   const onChangeSignUp = (e) => {
     setSignUp({ ...signUp, [e.target.name]: e.target.value })
+    
   }
   const onChangeChecker = (e) => {
     setChecker({ ...checker, [e.target.name]: e.target.value })
@@ -20,12 +66,13 @@ function SignupPage() {
     e.preventDefault();
     postSignUp();
     goToAddressPage(navigate)
+
   }
 
   return (
-    <>
+    <SignUpStyle>
       <Header currentPage={"signup"} />
-      <p>Cadastrar</p>
+      <h3> <b>Cadastrar</b> </h3>
       <form onSubmit={register}>
         <label htmlFor="name">Nome: </label>
         <input
@@ -82,9 +129,10 @@ function SignupPage() {
         />
         {checker.password !== signUp.password && <p>repita a mesma senha</p>}
         <br />
-        {checker.password === signUp.password && checker.email === signUp.email ? <button type="submit">Cadastrar</button> : <button disabled>Cadastrar</button>}
+        {checker.password === signUp.password  ? <button type="submit"> <b>Cadastrar</b> </button> : <button disabled> <b>Cadastrar</b> </button>}
       </form>
-    </>
+    </SignUpStyle>
   )
 }
+
 export default SignupPage;

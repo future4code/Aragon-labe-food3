@@ -4,6 +4,20 @@ import { goToEditAddressPage, goToEditProfilePage } from "../routes/coordinator"
 import { useNavigate } from "react-router-dom"
 import Footer from "../components/Footer"
 import GlobalStateContext from "../globalState/GlobalStateContext"
+import styled from "styled-components"
+
+const HeaderStyle = styled.header`
+  text-align: center;
+
+`
+const SectionStyled = styled.section`
+  margin: 12px;
+
+  button{
+    margin-top:10px;
+  }
+ 
+`
 
 function ProfilePage() {
   const navigate = useNavigate()
@@ -18,31 +32,45 @@ function ProfilePage() {
 
   return (
     <>
-      <Header currentPage={"profile"} />
+      <HeaderStyle>
+        <Header currentPage={"profile"} />
+      </HeaderStyle> 
+      
       <hr />
+      <SectionStyled>
       {profile ?
         <section key={profile.id}>
-          <span>{profile.name}</span>
+         <span>Nome: {profile.name}</span>
           <br />
-          <span>{profile.email}</span>
+          <span>Email: {profile.email}</span>
           <br />
-          <span>{profile.cpf}</span>
+          <span>Cpf: {profile.cpf}</span>
           <br />
           <button onClick={() => { goToEditProfilePage(navigate) }}>Editar</button>
           <p></p>
+         
         </section> : <p>Carregando...</p>}
 
       {address ?
         <section>
-          <span>{address.street},</span>
-          <span> {address.number}</span>
+         
+          <span>Endereço: {address.street}, </span>
+          <br />
+          <span>Número: {address.number} </span>
+          <br />
           {address.complement !== null &&
-            <span>, {address.complement}</span>}
-          <span> - {address.neighbourhood}</span>
+            <span>Complemento: {address.complement}</span>}
+            <br />
+          <span>Bairro: {address.neighbourhood}</span>
+         
           <br />
           <button onClick={() => { goToEditAddressPage(navigate) }}>Editar</button>
+    
         </section> : <p>Carregando...</p>}
+            
             <hr />
+            <p>Histórico de pedidos</p>  
+      </SectionStyled>       
       <Footer />
     </>
   )

@@ -6,7 +6,11 @@ import RestaurantCard from "../components/RestaurantCard"
 import ProductsCard from "../components/ProductsCard"
 import GlobalStateContext from "../globalState/GlobalStateContext"
 import { goToLoginPage } from "../routes/coordinator"
+import styled from "styled-components"
 
+const HeadersStyle = styled.header`
+    text-align: center;
+`
 
 function DetailsPage() {
     const context = useContext(GlobalStateContext)
@@ -40,14 +44,16 @@ function DetailsPage() {
 
     return (
         <>
-            <Header currentPage={"details"} />
+            <HeadersStyle>
+                <Header currentPage={"details"} />
+            </HeadersStyle>
+            
             <hr />
             <RestaurantCard
                 restaurant={details.restaurant}
                 isDetail={true}
             />
             {showProducts}
-            <hr />
             <Footer />
         </>
     )

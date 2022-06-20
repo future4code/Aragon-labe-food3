@@ -22,7 +22,8 @@ Acesso do usuário ao histórico de pedidos <br>
 
 Link Surge!
 
-https://tricky-wheel.surge.sh/
+https://tricky-wheel.surge.sh/ <br>
+acesso: grupo3@gmail.com senha: 123456
 
 Integrantes:
 

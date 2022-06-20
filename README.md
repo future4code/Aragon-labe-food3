@@ -25,13 +25,13 @@ Integrantes:
 
 Cristiano
 Susy
-Fernando
+Fernando 
 Adriana
 
 Referências.
 
-Labbedit
-LabbeNinjas
+Labbedit 
+LabbeNinjas 
 PokeDex
 
 Imagens

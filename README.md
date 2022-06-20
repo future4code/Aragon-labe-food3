@@ -19,16 +19,16 @@ https://tricky-wheel.surge.sh/
 
 Integrantes:
 
-Cristiano
-Susy
-Fernando
-Adriana
+Cristiano,
+Susy,
+Fernando,
+Adriana,
 
 Referências.
 
-Labbedit
-LabbeNinjas
-PokeDex
+Labbedit,
+LabbeNinjas,
+PokeDex,
 
 Imagens
 

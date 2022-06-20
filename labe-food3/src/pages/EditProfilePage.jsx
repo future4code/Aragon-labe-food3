@@ -3,8 +3,45 @@ import { useNavigate } from "react-router-dom"
 import Footer from "../components/Footer"
 import Header from "../components/Header"
 import GlobalStateContext from "../globalState/GlobalStateContext"
+import styled from "styled-components"
 
+const HeaderStyle = styled.header`
+    text-align: center;
 
+`
+const Section = styled.section`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top:10px;
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+}
+
+input{
+    height: 5vh;
+    border-radius: 5px;
+    border: solid 0.1px grey;
+    font-size: 16px;
+    color: gray;
+    font-size: 14px;
+}
+
+button{
+    background-color: red;
+    height: 5vh;
+    border: solid 0.1px grey;
+    border-radius: 2px;
+}
+
+header{
+    text-align: center;
+}   
+`
 function EditProfilePage() {
     const context = useContext(GlobalStateContext)
     const { signUp } = context.states
@@ -14,7 +51,7 @@ function EditProfilePage() {
     const onChangeSignUp = (e) => {
         setSignUp({ ...signUp, [e.target.name]: e.target.value })
     }
-    
+
     const navigate = useNavigate()
 
     const updateUserData = (e) => {
@@ -24,9 +61,12 @@ function EditProfilePage() {
 
     return (
         <>
-            <Header currentPage={"edit-profile"} />
+            <HeaderStyle>
+                <Header currentPage={"edit-profile"} />
+            </HeaderStyle>
+
             <hr />
-            <section>
+            <Section>
                 <form onSubmit={updateUserData}>
                     <label htmlFor="name">Nome: </label>
                     <input
@@ -53,7 +93,7 @@ function EditProfilePage() {
                     <input
                         pattern=""
                         id="cpf"
-                        placeholder="somente números"
+                        placeholder="Números"
                         name="cpf"
                         type="number"
                         value={signUp.cpf}
@@ -63,7 +103,7 @@ function EditProfilePage() {
                     <p />
                     <button>Atualizar</button>
                 </form>
-            </section>
+            </Section>
             <hr />
             <Footer />
         </>

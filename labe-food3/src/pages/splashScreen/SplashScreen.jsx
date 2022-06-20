@@ -1,4 +1,3 @@
-import { Splash } from "./styled.jsx"
 import logoBranco from "../../assets/logoBranco.png"
 import { useNavigate } from "react-router-dom"
 import { useEffect } from "react"
@@ -14,9 +13,7 @@ export const Container = styled.div`
     width: 100vw;
     height: 100vh;
     background-color: red;
-    background-image: url(${logoBranco});
     background-position: center;
-    background-size: 32%;
     background-repeat:no-repeat;
 `
 
@@ -24,15 +21,15 @@ function SplashScreen() {
     const navigate = useNavigate()
 
     useEffect(() => {
-        setTimeout(() => { goToLoginPage(navigate) }, 5000)
+        setTimeout(() => { goToLoginPage(navigate) }, 3000)
     }, [])
 
     return (
-        <Splash>
+        <main>
             <Container>
-                <img src={logoBranco} alt="Logo IFuture" />
+                <img src={logoBranco} width="40%" alt="Logo IFuture" />
             </Container>
-        </Splash>
+        </main>
     )
 }
 

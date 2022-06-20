@@ -1,25 +1,43 @@
 import { useNavigate } from "react-router-dom"
 import styled from "styled-components"
 import { goToCartPage, goToHomePage, goToProfilePage } from "../routes/coordinator"
+import imgHome from "../assets/homepageWhite.png"
+import imgCart from "../assets/cartWhite.png"
+import imgProfile from "../assets/avatarWhite.png"
 
 const FooterIFuture = styled.footer`
-ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 10px
-}
+     display: flex;
+    justify-content: space-around; 
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    height: 8vh;
+    width: 100%;
+    align-items: center;
+    border-top:solid 1px black;
+    
+    img{
+        width: 40px;
+        cursor: pointer;
+        display: flex;
+        
+        height: 4vh;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;        
+    }
 `
-function Footer () {
+
+function Footer() {
     const navigate = useNavigate()
     return (
-        <FooterIFuture>
-            <ul>
-                <li><button onClick={() => goToHomePage(navigate)}>Home</button></li>
-                <li><button onClick={() => goToCartPage(navigate)}>Carrinho</button></li>
-                <li><button onClick={() => goToProfilePage(navigate)}>Perfil</button></li>
-            </ul>
-        </FooterIFuture>
+        <>
+            <FooterIFuture>
+                <img src={imgHome} alt="homeLogo" onClick={() => goToHomePage(navigate)} />
+                <img src={imgCart} alt="cartLogo" onClick={() => goToCartPage(navigate)} />
+                <img src={imgProfile} alt="cartLogo" onClick={() => goToProfilePage(navigate)} />
+            </FooterIFuture>
+        </>
     )
 }
 export default Footer

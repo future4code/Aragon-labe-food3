@@ -3,6 +3,44 @@ import { goToHomePage } from "../routes/coordinator"
 import { useNavigate } from "react-router-dom"
 import Header from "../components/Header"
 import GlobalStateContext from "../globalState/GlobalStateContext"
+import styled from "styled-components"
+
+const AddresStyle = styled.main`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20vw;
+
+    form{
+        display: flex;
+        flex-direction: column;
+        width: 90vw;
+    }
+    input{
+        height: 5vh;
+        border-radius: 5px;
+        border: solid 0.1px grey;
+        font-size: 14px;
+    }
+    button{
+        background-color: red;
+        height: 5vh;
+        border: solid 0.1px grey;
+        border-radius: 2px;
+    }
+    section{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    b{
+        font-size: 18px;
+    }
+    h3{
+        font-size:20px;
+    }
+`
 
 function AddressPage() {
 
@@ -20,7 +58,7 @@ function AddressPage() {
     goToHomePage(navigate)
   }
   return (
-    <>
+    <AddresStyle>
       <Header currentPage={"address"} />
       <form onSubmit={saveAddress}>
                 <label htmlFor="street">Logradouro: </label>
@@ -30,6 +68,7 @@ function AddressPage() {
                     value={address.street}
                     onChange={onChangeAddress}
                     required
+                    placeholder="Rua / Av"
                 />
                 <br />
                 <label htmlFor="number">Número: </label>
@@ -39,6 +78,7 @@ function AddressPage() {
                     value={address.number}
                     onChange={onChangeAddress}
                     required
+                    placeholder="Número"
                 />
                 <br />
                 <label htmlFor="complement">Complemento: </label>
@@ -47,6 +87,7 @@ function AddressPage() {
                     name="complement"
                     value={address.complement}
                     onChange={onChangeAddress}
+                    placeholder="Apto / Bloco"
                 />
                 <br />
                 <label htmlFor="neighbourhood">Bairro: </label>
@@ -56,6 +97,7 @@ function AddressPage() {
                     value={address.neighbourhood}
                     onChange={onChangeAddress}
                     required
+                    placeholder="Bairro"
                 />
                 <br />
                 <label htmlFor="city">Cidade: </label>
@@ -65,6 +107,7 @@ function AddressPage() {
                     value={address.city}
                     onChange={onChangeAddress}
                     required
+                    placeholder="Cidade"
                 />
                 <br />
                 <label htmlFor="state">Estado: </label>
@@ -74,11 +117,13 @@ function AddressPage() {
                     value={address.state}
                     onChange={onChangeAddress}
                     required
+                    placeholder="Estado"
                 />
                 <p />
-                <button type="submit">Salvar</button>
+                <button type="submit"> <b>Salvar</b> </button>
             </form>
-    </>
+    </AddresStyle>
   )
 }
+
 export default AddressPage

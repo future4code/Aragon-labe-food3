@@ -2,7 +2,8 @@ PROJETO LABEFOOD
 
 O que funciona!
 
-Apresentação da tela de abertura com a logo do app, redirecionando em seguida o usuário para a página de login
+Apresentação da tela de abertura com a logo do app,<br>
+redirecionando em seguida o usuário para a página de login
 Navegação entre as páginas
 Busca de restaurantes por nome
 Exibição dos detalhes do restaurante e cardápio
@@ -14,7 +15,8 @@ O que não funciona!
 Filtro de restaurantes por categoria
 Acesso os pratos do restaurante, divididos em categorias
 Acesso do usuário ao histórico de pedidos
-Funcionalidades do carrinho (exibição do endereço de entrega, valor da compra, forma de pagamento e remoção de itens)
+Funcionalidades do carrinho <br>
+(exibição do endereço de entrega, valor da compra, forma de pagamento e remoção de itens)
 
 Link Surge!
 
@@ -24,14 +26,14 @@ Integrantes:
 
 
 Cristiano <br>
-Susy
-Fernando 
-Adriana
+Susy <br>
+Fernando <br>
+Adriana <br>
 
 Referências.
 
-Labbedit 
-LabbeNinjas 
+Labbedit <br>
+LabbeNinjas <br>
 PokeDex
 
 Imagens

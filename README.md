@@ -24,20 +24,14 @@ Integrantes:
 
 
 Cristiano
-
 Susy
-
 Fernando
-
 Adriana
 
 Referências.
 
-
 Labbedit
-
 LabbeNinjas
-
 PokeDex
 
 Imagens
